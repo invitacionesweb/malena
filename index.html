@@ -176,6 +176,27 @@
       </div>
       
    </footer>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("myAudio");
+    
+        // Escucha el primer scroll
+        const playOnScroll = () => {
+          audio.play().catch(e => {
+            console.warn("El navegador bloqueó la reproducción automática", e);
+          });
+          document.removeEventListener("scroll", playOnScroll); // Se ejecuta solo una vez
+        };
+    
+        document.addEventListener("scroll", playOnScroll);
+      });
+    </script>
+     <Script src="./reproductor.js"></Script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+      AOS.init();
+  </script>
+  
      <script>
       const parallax = document.getElementById("parallax");
   
